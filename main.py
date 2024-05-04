@@ -14,7 +14,10 @@ from llama_index.core.llms import ChatMessage, MessageRole
 from llama_index.core.prompts import ChatPromptTemplate
 from llama_index.vector_stores.chroma import ChromaVectorStore
 from llama_index.core import SimpleDirectoryReader
-import chromadb
+from llama_index.vector_stores.qdrant import QdrantVectorStore
+import qdrant_client
+from qdrant.client import Client
+
 
 # Text QA Prompt template construction
 chat_text_qa_msgs = [
@@ -68,14 +71,18 @@ def embed():
 
 
     # Create a local Qdrant vector store
-    db = chromadb.PersistentClient(path="./chroma_db")
+    # db = chromadb.PersistentClient(path="./chroma_db")
 
-    # Create collection
-    chroma_collection = db.get_or_create_collection("quickstart")
+    # # Create collection
+    # chroma_collection = db.get_or_create_collection("quickstart")
 
-    # Assign Chroma as the vector_store to the context
-    vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
-    storage_context = StorageContext.from_defaults(vector_store=vector_store)
+    # # Assign Chroma as the vector_store to the context
+    # vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
+    # storage_context = StorageContext.from_defaults(vector_store=vector_store)
+    client = qdrant_client.QdrantClient(path="qdrant_db")
+    vector_store = QdrantVectorStore(
+        client=client, collection_name="text_collection")
+storage_context = StorageContext.from_defaults(vector_store=vector_store)
 
     # Create your index
     index = VectorStoreIndex.from_documents(
