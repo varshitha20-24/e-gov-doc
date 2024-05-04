@@ -5,7 +5,7 @@ tqdm
 torch
 torchvision
 matplotlib
-qdrant_client
+
 
 sentence_transformers
 transformers
