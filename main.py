@@ -12,7 +12,7 @@ from langchain.embeddings import HuggingFaceEmbeddings
 from llama_index.embeddings.langchain import LangchainEmbedding
 from llama_index.core.llms import ChatMessage, MessageRole
 from llama_index.core.prompts import ChatPromptTemplate
-from llama_index.vector_stores.chroma import ChromaVectorStore
+
 from llama_index.core import SimpleDirectoryReader
 from llama_index.vector_stores.qdrant import QdrantVectorStore
 import qdrant_client
