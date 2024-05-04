@@ -5,11 +5,11 @@ tqdm
 torch
 torchvision
 matplotlib
-chromadb
+qdrant_client
 
 sentence_transformers
 transformers
-llama-index-vector-stores-chroma
+llama-index-vector-stores-qdrant
 
 
 llama_index.embeddings.huggingface
