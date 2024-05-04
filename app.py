@@ -19,9 +19,9 @@ import PyPDF2
 import shutil
 from llama_index.core import load_index_from_storage
 from llama_index.core import StorageContext
-import chromadb
+
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader
-from llama_index.vector_stores.chroma import ChromaVectorStore
+
 import os
 from main import query
 app = Flask(__name__, static_folder='static',template_folder='templates')
