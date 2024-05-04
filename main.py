@@ -82,12 +82,11 @@ def embed():
     client = qdrant_client.QdrantClient(path="qdrant_db")
     vector_store = QdrantVectorStore(
         client=client, collection_name="text_collection")
-storage_context = StorageContext.from_defaults(vector_store=vector_store)
+    storage_context = StorageContext.from_defaults(vector_store=vector_store)
 
     # Create your index
     index = VectorStoreIndex.from_documents(
-        documents, storage_context=storage_context
-    )
+        documents, storage_context=storage_context)
    
    
     return index
