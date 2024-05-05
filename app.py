@@ -151,4 +151,6 @@ def athena_chat():
     return render_template('athenachat.html')
 
 if __name__ == '__main__':
+    # logging.info("Flask app started")
+    app.run(host="0.0.0.0", port=8000)
     app.run(port = 7000, debug=False)
