@@ -11,6 +11,7 @@ whitenoise
 
 sentence_transformers
 transformers
+qdrant-client
 llama-index-vector-stores-qdrant
 
 
