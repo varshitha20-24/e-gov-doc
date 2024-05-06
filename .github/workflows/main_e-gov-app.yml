@@ -26,6 +26,7 @@ jobs:
         run: |
           python -m venv venv
           source venv/bin/activate
+          
       - name: install open cv dependency
         run: |
           sudo apt update && sudo apt install libegl1 -y
