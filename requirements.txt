@@ -5,11 +5,12 @@ tqdm
 torch
 torchvision
 matplotlib
-
+psycopg2
+python-dotenv
+whitenoise
 
 sentence_transformers
 transformers
-qdrant-client
 llama-index-vector-stores-qdrant
 
 
